@@ -1,0 +1,5 @@
+
+        /* Hover effect for the card (div) background */
+        .group:hover {
+            background-color: var(--hover1); 
+          }

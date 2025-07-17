@@ -1,0 +1,75 @@
+.modal__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
+  }
+  
+  .modal__container {
+    background: #fff;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 4px;
+    position: relative;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .activeContainer {
+    transform: translateY(0);
+  }
+  
+  .btn__purple {
+    background: #6b46c1;
+    padding: 10px 40px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .close:hover {
+    color: #6b46c1;
+  }
+  

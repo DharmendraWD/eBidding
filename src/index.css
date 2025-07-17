@@ -1,0 +1,138 @@
+
+
+@import "tailwindcss";
+/* In your global CSS or Tailwind custom CSS file */
+::-webkit-scrollbar {
+  width: 4px;           /* Vertical scrollbar width */
+  height: 4px;          /* Horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5);  /* Scrollbar color */
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;   /* Or any bg color */
+}
+.veryLightBoxSHadow{
+  box-shadow: 0 10px 20px rgb(0 0 0 / 3%);
+
+}
+:root{
+  --primaryClr:#4f46e5;
+  --primaryClrInLightDarkInDark:#4f46e5;
+  --mainbg: white;
+  --mainbg2: #4f46e514;
+  --box1: #f6f7f8;
+  --box2: #ddeefdc2;
+  --box3: #e1ecf5c2;
+  --mainColor:rgb(47, 46, 46);
+  --linkColor: navy;
+--placeholderClr:#9ca3af;
+--placeholderClr2:#9ca3af;
+
+--whiteInLight:white;
+--menuHoverClr:#f3f4f6;
+--btnBg:#4f46e5;
+--btnClr:white;
+--hover1:#4f46e5;
+/* font size  */
+--smallfont12: 12px;
+--smallfont13: 13px;
+--smallfont14: 14px;
+--smallfont15: 15px;
+--mdfont16: 16px;
+--mdfont17: 17px;
+--mdfont18: 18px;
+--mdfont19: 19px;
+--mdfont20: 20px;
+--mdfont21: 21px;
+--lgfont22: 22px;
+--lgfont23: 23px;
+--lgfont24: 24px;
+--lgfont25: 25px;
+--lgfont26: 26px;
+--lgfont27: 27px;
+--xxlfont28: 28px;
+--xxlfont29: 29px;
+--xxlfont30: 30px;
+/* font size end */
+}
+.text-sf12 { font-size: var(--smallfont12); }
+.text-sf13 { font-size: var(--smallfont13); }
+.text-sf14 { font-size: var(--smallfont14); }
+.text-sf15 { font-size: var(--smallfont15); }
+.text-mf16 { font-size: var(--mdfont16); }
+.text-mf17 { font-size: var(--mdfont17); }
+.text-mf18 { font-size: var(--mdfont18); }
+.text-mf19 { font-size: var(--mdfont19); }
+.text-mf20 { font-size: var(--mdfont20); }
+.text-mf21 { font-size: var(--mdfont21); }
+.text-lgf22 { font-size: var(--lgfont22); }
+.text-lgf23 { font-size: var(--lgfont23); }
+.text-lgf24 { font-size: var(--lgfont24); }
+.text-lgf25 { font-size: var(--lgfont25); }
+.text-lgf26 { font-size: var(--lgfont26); }
+.text-lgf27 { font-size: var(--lgfont27); }
+.text-xxlf28 { font-size: var(--xxlfont28); }
+.text-xxlf29 { font-size: var(--xxlfont29); }
+.text-xxlf30 { font-size: var(--xxlfont30); }
+
+[data-theme="dark"]{
+  --mainbg: #191b21;
+  --box1: #282c34;
+  --box2: #23272f;
+  --box3: #374151;
+  --mainColor:#9ca3af;
+  --linkColor: rgba(55, 86, 223, 0.778);
+--placeholderClr:#9ca3af;
+--placeholderClr2:#9ca3af57;
+--whiteInLight:white;
+--menuHoverClr:#282c34;
+--btnBg:white;
+--btnClr:blue;
+--hover1:#4f46e5;
+--primaryClrInLightDarkInDark:#282c34;
+--mainbg2: #282c34;
+
+
+}
+
+body{
+  background-color: var(--mainbg);
+  color: var(--mainColor);
+  font-family: "Work Sans", sans-serif;
+}
+*{
+  transition: all 0.3s ease-in-out;
+}
+
+/* .light_theme{
+  --primaryColor:#302ae6;
+  --secondaryColor: #536390;
+  --fontColor: #424242;
+  --bgColor: #fff;
+  --headingColor:#292922;
+  }
+  
+  .dark_theme{
+  --primaryColor:#9a97f3;
+  --secondaryColor: #818cab;
+  --fontColor: #e1e1ff;
+  --bgColor: #161625;
+  --headingColor:#818cab;
+  } */
+
+.kMgreK{
+  background:var(--mainbg) !important;
+  color: var(--mainColor) !important;
+}
+.hWvUAn{
+  color: var(--linkColor) !important;
+background:var(--mainbg) !important;
+}
+.bsVlzY{
+  color: var(--mainColor) !important;
+  background-color: var(--mainbg) !important;
+}
