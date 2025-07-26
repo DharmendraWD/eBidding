@@ -10,7 +10,11 @@ import Footer from './components/footers/Footer'
 import Login from './components/login/Login'
 import Signup from './components/login/Signup'
 import Dashboard from './components/dashboard/Dashboard'
-import Profile from './components/dashboard/profile/Profile'
+import Profile from './components/dashboard/profileManager/profile/Profile'
+import PasswordManager from './components/dashboard/passwordManager/passwordManager'
+import TenderManager from './components/dashboard/tenderManager/TenderManager'
+import Testtt from './components/TESTT/Testtt'
+import PrivateRoute from './Redux/auth/PrivateRoute'
 
 function App() {
 
@@ -55,16 +59,42 @@ function App() {
   {/* signup end  */}
 {/* dashboiiard */}
   <Route path='/dashboard' element={
+     <PrivateRoute>
     <div className="mainWrapper max-w-[2500px] px-[5px] lg:px-[90px] mx-auto">
  <Dashboard></Dashboard>
   </div>
+  </PrivateRoute>
   }></Route>
 {/* dashboard end  */}
 
 {/* PROFILE  */}
   <Route path='/profile-manager' element={
+        <PrivateRoute>
     <div className="mainWrapper min-h-screen max-w-[2500px] mt-[100px] px-[5px] lg:px-[90px] mx-auto">
 <Profile></Profile>
+  </div>
+  </PrivateRoute>
+  }></Route>
+  {/* Password manager  */}
+  <Route path='/password-manager' element={
+     <PrivateRoute>
+    <div className="mainWrapper min-h-screen max-w-[2500px] mt-[100px] px-[5px] lg:px-[90px] mx-auto">
+<PasswordManager></PasswordManager>
+  </div>
+   </PrivateRoute>
+  }></Route>
+  {/* Password manager end */}
+  <Route path='/tender-manager' element={
+      <PrivateRoute>
+    <div className="mainWrapper min-h-screen max-w-[2500px] mt-[100px] px-[5px] lg:px-[90px] mx-auto">
+<TenderManager></TenderManager>
+  </div>
+  </PrivateRoute>
+  }></Route>
+  {/* TEST  */}
+  <Route path='/testt' element={
+    <div className="mainWrapper min-h-screen max-w-[2500px] mt-[100px] px-[5px] lg:px-[90px] mx-auto">
+<Testtt></Testtt>
   </div>
   }></Route>
 

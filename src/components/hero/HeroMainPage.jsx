@@ -40,13 +40,13 @@ function HeroMainPage({ children }) {
       {/* Left:Login signup */}
 {children}
       {/* Right: Slidable Card */}
-      <div className={`transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'} hidden lg:block w-full flex justify-center`}>
+      {/* <div className={`transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'} hidden lg:block w-full flex justify-center`}>
         <div className="bg-[var(--mainbg)] bg-opacity-95 rounded-xl shadow-xl p-4 w-[300px] md:w-[350px]">
           <img src={slides[currentSlide].image} alt="Product" className="rounded-lg w-full h-[400px] object-cover mb-4" />
           <h2 className="text-lg font-semibold text-[var(--mainColor)]">{slides[currentSlide].title}</h2>
           <p className="text-[var(--placeholderClr)] font-bold">{slides[currentSlide].price}</p>
         </div>
-      </div>
+      </div> */}
     </div>
   </section>
   )

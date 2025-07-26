@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import popupStyle from '../css/profile.module.css';
 import ProfileEdit from '../profile/ProfileEdit';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProfile } from '../../../../Redux/profile/profileSlice';
 
 function CompanyInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showModal, setShowModal] = useState(false); // For delayed animation
 
+  // getting logged in user info 
+  // get token  
+  const token = useSelector((state) => state.auth.token);
+  const dispatch = useDispatch();
+  const profile = useSelector((state) => state.profile.data);
+
+  useEffect(() => {
+  if (token) {
+    dispatch(fetchProfile(token));
+  }
+}, [token]);
+console.log(profile)
+// getting logged in user info end
 
   const openModal = () => {
     setShowModal(true); // render modal
@@ -45,7 +59,7 @@ function CompanyInfo() {
 
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-2">Trading Institution</h3>
+      <h3 className="text-lg font-semibold mb-2 text-[blue]">Trading Institution</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 veryLightBoxSHadow">
         <div>
           <p className="text-gray-500 text-sm">Country</p>
@@ -61,7 +75,7 @@ function CompanyInfo() {
         </div>
       </div>
   
-      <h3 className="text-lg font-semibold mb-2">Contact Information</h3>
+      <h3 className="text-lg font-semibold mb-2 text-[blue]">Contact Information</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 veryLightBoxSHadow">
         <div>
           <p className="text-gray-500 text-sm">Mobile</p>
@@ -77,7 +91,7 @@ function CompanyInfo() {
         </div>
       </div>
   
-      <h3 className="text-lg font-semibold mb-2">Email & Website</h3>
+      <h3 className="text-lg font-semibold mb-2 text-[blue]">Email & Website</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 veryLightBoxSHadow">
         <div>
           <p className="text-gray-500 text-sm">Email</p>
@@ -88,7 +102,7 @@ function CompanyInfo() {
           <p className="font-medium">N/A</p> {/* Replace with actual data if available */}
         </div>
       </div>
-      <h3 className="text-lg font-semibold mb-2">Ownership Information</h3>
+      <h3 className="text-lg font-semibold mb-2 text-[blue]">Ownership Information</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 veryLightBoxSHadow">
         <div>
           <p className="text-gray-500 text-sm">Proprietor</p>
@@ -104,7 +118,7 @@ function CompanyInfo() {
         </div>
       </div>
       {/* CONTACT PERSON INFORMATIOB  */}
-      <h3 className="text-lg font-semibold mb-2">Contact Person Information</h3>
+      <h3 className="text-lg font-semibold mb-2 text-[blue]">Contact Person Information</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 veryLightBoxSHadow">
         <div>
           <p className="text-gray-500 text-sm">Contact Person</p>
@@ -116,7 +130,7 @@ function CompanyInfo() {
         </div>
       </div>
       {/* COMPNAY INFORMATION  */}
-      <h3 className="text-lg font-semibold mb-2">Company Information</h3>
+      <h3 className="text-lg font-semibold mb-2 text-[blue]">Company Information</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 veryLightBoxSHadow">
         <div>
           <p className="text-gray-500 text-sm">Registration Date</p>
@@ -143,20 +157,17 @@ function CompanyInfo() {
 
       {showModal && (
         <div
-          className={`${popupStyle.modal__wrapper} ${isModalOpen ? popupStyle.active : ''}`}
+          className={`${popupStyle.modal__wrapper}  ${isModalOpen ? popupStyle.active : ''}`}
           onClick={handleWrapperClick}
         >
           <div
-            className={`${popupStyle.modal__container} ${isModalOpen ? popupStyle.activeContainer : ''}`}
+            className={`${popupStyle.modal__container} max-h-[90vh] ${isModalOpen ? popupStyle.activeContainer : ''}`}
           >
             <button className={popupStyle.close} onClick={closeModal}>
               &times;
             </button>
             <div>
               <ProfileEdit></ProfileEdit>
-            </div>
-            <div className={popupStyle.action}>
-              <button className={popupStyle.btn__purple}>Login</button>
             </div>
           </div>
         </div>

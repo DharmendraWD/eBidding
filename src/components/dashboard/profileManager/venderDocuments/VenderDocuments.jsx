@@ -89,6 +89,20 @@ const VendorDocuments = () => {
                   {doc.file ? doc.file.name : 'No file chosen'}
                 </div>
 
+{/* Selected File Name + Image Preview */}
+{/* <div className="flex-grow text-gray-600 text-sm py-2 px-3 bg-[var(--menuHoverClr)] rounded-lg flex flex-col items-start gap-2 min-h-[40px] break-words">
+  <span>{doc.file ? doc.file.name : 'No file chosen'}</span>
+
+  {doc.file && doc.file.type.startsWith('image/') && (
+    <img
+      src={URL.createObjectURL(doc.file)}
+      alt="Preview"
+      className="max-w-full h-auto rounded-md border border-gray-300 shadow-sm"
+      style={{ maxHeight: '150px' }}
+    />
+  )}
+</div> */}
+
                 {/* Submit Button */}
                 <button
                   onClick={() => handleSubmit(doc.id)}

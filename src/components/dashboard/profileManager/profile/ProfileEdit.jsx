@@ -74,7 +74,6 @@ const ProfileEdit = () => {
 
 
   return (
-    <div className="container mx-auto p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen">
       <div className="bg-white rounded-lg shadow-md p-6">
         {/* Top Header Section */}
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4 border-b pb-4">
@@ -108,7 +107,7 @@ const ProfileEdit = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-8 overflow-auto h-screen"> {/* Main form container with vertical spacing */}
+        <form onSubmit={handleSubmit} className="space-y-8 overflow-auto max-h-[60vh]"> {/* Main form container with vertical spacing */}
 
           {/* General Information Section */}
           <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
@@ -508,7 +507,6 @@ const ProfileEdit = () => {
           </div>
         </form>
       </div>
-    </div>
   );
 };
 

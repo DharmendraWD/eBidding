@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaUserCog, FaKey, FaFileAlt, FaShoppingCart, FaWpforms, FaBox } from 'react-icons/fa'
 import HeroStyle from '../hero/css/hero.module.css' // replace with your actual CSS module path
 import Table from '../between/Table'
-import Profile from './profile/Profile'
+import Profile from './profileManager/profile/Profile'
 
 function Dashboard() {
     const categories = [
