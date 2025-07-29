@@ -23,6 +23,7 @@
   --primaryClr:#4f46e5;
   --primaryClrInLightDarkInDark:#4f46e5;
   --mainbg: white;
+  --mainbg3Anit:aliceblue;
   --mainbg2: #4f46e514;
   --box1: #f6f7f8;
   --box2: #ddeefdc2;
@@ -81,6 +82,7 @@
 
 [data-theme="dark"]{
   --mainbg: #191b21;
+  --mainbg3Anit:#191b21;
   --box1: #282c34;
   --box2: #23272f;
   --box3: #374151;

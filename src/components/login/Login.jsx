@@ -3,10 +3,17 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginUser } from '../../Redux/auth/authSlice'
 import { toast } from 'react-toastify'
+import InstructionPopup from '../utilities/InstructionPopup'
+import TextPopupOpener from '../utilities/TextPopupOpener'
+
 
 function Login() {
   const [user, setUser] = useState({ email: '', password: '' })
   const [hasAttemptedLogin, setHasAttemptedLogin] = useState(false)  // <-- useState here
+
+  const isPopupOpen = useSelector((state) => state.popup); // assuming reducer key is 'popup'
+
+
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -102,12 +109,28 @@ function Login() {
             >
               {auth.loading ? 'Logging in...' : 'Login'}
             </button>
-            <p className="text-sm font-light text-gray-500">
+            <p className="text-sm mb-0 font-light text-gray-500">
               New User? <Link to="/signup" className="font-medium text-[var(--linkColor)] hover:underline">Sign Up</Link>
             </p>
+            <p style={{marginTop: '0px'}} className="text-sm  font-light text-gray-500 flex gap-2">
+              Forgot Password? <p className="font-medium text-[var(--linkColor)] cursor-pointer">
+                <TextPopupOpener text="Reset here" />
+              </p>
+            </p>
+
           </form>
         </div>
       </div>
+            {isPopupOpen ? (
+        <>
+     <InstructionPopup togglePopupState={isPopupOpen}>
+   <p>Lorem Lorem</p>
+     </InstructionPopup>
+        </>
+
+      ) : (
+        ""
+      )}
     </section>
   )
 }

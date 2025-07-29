@@ -2,40 +2,42 @@ import React, { useEffect, useState } from 'react'
 import Login from '../login/Login';
 
 function HeroMainPage({ children }) {
-    const slides = [
-        {
-          title: '16th-Century Culverin Cannon',
-          price: 'Rs: 350.00',
-          image: 'https://theme.bitrixinfotech.com/bidzone/assets/images/auction-product-3.png'
-        },
-        {
-          title: 'Vintage Gold Clock',
-          price: 'Rs: 299.00',
-          image: 'https://theme.bitrixinfotech.com/bidzone/assets/images/auction-product-13.png'
-        },
-        {
-          title: 'Antique Rifle',
-          price: 'Rs: 420.00',
-          image: 'https://theme.bitrixinfotech.com/bidzone/assets/images/auction-product-2.png'
-        },
-      ];
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [fade, setFade] = useState(true);
+    // const slides = [
+    //     {
+    //       title: '16th-Century Culverin Cannon',
+    //       price: 'Rs: 350.00',
+    //       image: 'https://theme.bitrixinfotech.com/bidzone/assets/images/auction-product-3.png'
+    //     },
+    //     {
+    //       title: 'Vintage Gold Clock',
+    //       price: 'Rs: 299.00',
+    //       image: 'https://theme.bitrixinfotech.com/bidzone/assets/images/auction-product-13.png'
+    //     },
+    //     {
+    //       title: 'Antique Rifle',
+    //       price: 'Rs: 420.00',
+    //       image: 'https://theme.bitrixinfotech.com/bidzone/assets/images/auction-product-2.png'
+    //     },
+    //   ];
+    // const [currentSlide, setCurrentSlide] = useState(0);
+    // const [fade, setFade] = useState(true);
   
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setFade(false);
-        setTimeout(() => {
-          setCurrentSlide((prev) => (prev + 1) % slides.length);
-          setFade(true);
-        }, 300);
-      }, 7000);
-      return () => clearInterval(interval);
-    }, []);
+    // useEffect(() => {
+    //   const interval = setInterval(() => {
+    //     setFade(false);
+    //     setTimeout(() => {
+    //       setCurrentSlide((prev) => (prev + 1) % slides.length);
+    //       setFade(true);
+    //     }, 300);
+    //   }, 7000);
+    //   return () => clearInterval(interval);
+    // }, []);
   
   return (
-    <section className="pt-24 bg-cover bg-center min-h-screen py-6 lg:py-0 px-4 flex items-center justify-center"
-    style={{ backgroundImage: `url(${slides[currentSlide].image})` }}>
+    <section className="pt-20 bg-cover mt-0 md:mt-[60px] bg-center min-h-screen py-6 lg:py-4 px-4 flex items-center bg-[var(--mainbg3Anit)] justify-center"
+   >
+    {/* <section className="pt-24 bg-cover bg-center min-h-screen py-6 lg:py-0 px-4 flex items-center justify-center"
+    style={{ backgroundImage: `url(${slides[currentSlide].image})` }}> */}
     <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 w-full max-w-7xl mx-auto">
       {/* Left:Login signup */}
 {children}

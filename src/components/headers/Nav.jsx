@@ -68,10 +68,10 @@ const Nav = () => {
   }>
               {NavMenus.map((item, i) => (
                 <div key={i} className="relative group">
-                  <button className="text-[var(--mainColor)] text-sf14 hover:text-indigo-600 flex items-center gap-1">
+                  <Link to={item.link} className="text-[var(--mainColor)] text-sf14 hover:text-indigo-600 flex items-center gap-1">
                     {item.name}
                     {item.submenu?.length > 0 && <FaChevronDown size={9} />}
-                  </button>
+                  </Link>
 
                   {item.submenu?.length > 0 && (
                     <div className="absolute md:min-w-[210px] top-full z-[99] md:w-auto w-max left-0 mt-2 w-40 bg-[var(--mainbg)] border border-[var(--menuHoverClr)] rounded shadow-lg scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 origin-top">

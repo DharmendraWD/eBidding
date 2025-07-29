@@ -16,6 +16,7 @@ import TenderManager from './components/dashboard/tenderManager/TenderManager'
 import Testtt from './components/TESTT/Testtt'
 import PrivateRoute from './Redux/auth/PrivateRoute'
 import { useSelector } from 'react-redux'
+import About from './components/about/ABout'
 
 function App() {
   const navigate = useNavigate();
@@ -54,11 +55,16 @@ function App() {
     </div>
       <div className="mainWrapper max-w-[2500px] px-[5px] lg:px-[90px] mx-auto">
       <Table></Table>
-    <InfiniteScrollBoxes></InfiniteScrollBoxes>
+    {/* <InfiniteScrollBoxes></InfiniteScrollBoxes> */}
     </div>
     </>
   }></Route>
       {/* HOME END */}
+      {/* ABout  */}
+  <Route path='/about' element={
+<><About></About></>
+  }></Route>
+      {/* ABout END */}
 
 {/* Signup  */}
   <Route path='/signup' element={
