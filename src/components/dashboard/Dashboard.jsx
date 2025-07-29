@@ -79,7 +79,7 @@ const instructionData = [
 </div>
 <BoxTable></BoxTable>
 </div>
-<div className='flex justify-center '>
+<div className='flex justify-center flex-wrap gap-[6px] overflow-hidden '>
 {categories.map((category, index) => (
         <Link to={category.link} key={index} className='sm:max-w-[200px] w-full '>
           <div

@@ -64,7 +64,7 @@ const BoxTable = () => {
         <div className="divide-y p-1">
           {processingItems.map((item) => (
    <div
-   class="w-full m-1 max-w-[500px] mx-auto bg-[var(--mainbg)] overflow-hidden dark:bg-zinc-900"
+   class="w-full m-1 max-w-[500px] mx-auto bg-[var(--mainbg)]  dark:bg-zinc-900"
  >
    <div class="flex justify-between items-center px-1">
      <div class="flex items-center">

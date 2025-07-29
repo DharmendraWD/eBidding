@@ -32,23 +32,28 @@ function NavProfile() {
 
   return (
     <div>
-       <div className="hidden md:flex space-x-4 items-center">        
+       <div className="flex space-x-4 items-center">        
        <div className="relative group inline-block">
   {/* Trigger area */}
   <div className="cursor-pointer">
     <img
-      className="w-[40px] rounded-full mx-auto"
+      className="md:w-[35px] w-[28px] rounded-full mx-auto"
       src="https://randomuser.me/api/portraits/women/82.jpg"
       alt=""
     />
-    <button className="text-[var(--mainColor)] text-sf14 hover:text-indigo-600 flex items-center gap-1">
+    <button className="text-[var(--mainColor)] md:flex hidden text-sf14 hover:text-indigo-600 items-center gap-1">
       Dharmendra
       <FaChevronDown size={9} />
     </button>
   </div>
 
   {/* Dropdown menu */}
-  <div className="absolute top-full left-0 mt-2 w-40 bg-[var(--mainbg)] border border-[var(--menuHoverClr)] rounded shadow-lg opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 origin-top z-50">
+  <div className="absolute top-full md:left-0 left-[-91px] md:width-auto width-[152px] mt-2 w-40 bg-[var(--mainbg)] border border-[var(--menuHoverClr)] rounded shadow-lg opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 origin-top z-50">
+    <p
+      className="block md:hidden text-sf14 pl-4 py-1 text-[var(--mainColor)] hover:bg-[var(--menuHoverClr)]"
+    >
+     Hi, Dharmendra
+    </p>
     <Link
       to={"dashboard"}
       className="block text-sf14 pl-4 py-1 text-[var(--mainColor)] hover:bg-[var(--menuHoverClr)]"

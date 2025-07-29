@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Nav from './components/headers/Nav'
 import HeroMainPage from './components/hero/HeroMainPage'
 import InfiniteScrollBoxes from './components/hero/InfinteScrollBoxes'
 import Table from './components/between/Table'
 
 
-import {Link, Routes, Route} from "react-router-dom";
+import {Link, Routes, Route, useNavigate, useLocation} from "react-router-dom";
 import Footer from './components/footers/Footer'
 import Login from './components/login/Login'
 import Signup from './components/login/Signup'
@@ -15,15 +15,33 @@ import PasswordManager from './components/dashboard/passwordManager/passwordMana
 import TenderManager from './components/dashboard/tenderManager/TenderManager'
 import Testtt from './components/TESTT/Testtt'
 import PrivateRoute from './Redux/auth/PrivateRoute'
+import { useSelector } from 'react-redux'
 
 function App() {
+  const navigate = useNavigate();
+  const auth = useSelector((state) => state.auth);
+
+  const location = useLocation(); // Get current URL path
+
+  // Redirect immediately if authenticated and at "/"
+  useEffect(() => {
+    if (auth.isAuthenticated && location.pathname === '/') {
+      navigate('/dashboard', { replace: true }); // `replace` prevents back navigation to "/"
+    }
+  }, [auth.isAuthenticated, location.pathname, navigate]);
+
+  // Prevent flashing "/" component
+  if (auth.isAuthenticated && location.pathname === '/') {
+    return null; // don't render anything while redirecting
+  }
+
+
 
 
   {/* <Route path='/service' element={<Service></Service>}></Route>*/}
   return (
 
     <>
-
     <Nav></Nav>
     <Routes>
       {/* HOME  */}
