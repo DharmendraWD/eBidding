@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import popupStyle from '../css/profile.module.css';
 import ProfileEdit from '../profile/ProfileEdit';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProfile } from '../../../../Redux/profile/profileSlice';
+import { fetchProfile } from '../../../../Redux/profile/ProfileSlice';
 
 function CompanyInfo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
