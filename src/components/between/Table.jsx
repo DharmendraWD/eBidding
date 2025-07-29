@@ -140,7 +140,6 @@ const customStyles = {
 
   return (
     <div  style={{ backgroundColor: 'var(--mainbg)', padding: '1rem', borderRadius: '8px' }}>
-        <HeadingXl text={"Tender Notice"}></HeadingXl>
       <DataTable
        columns={columns} 
        data={tableData}

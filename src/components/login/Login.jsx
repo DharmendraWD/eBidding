@@ -19,8 +19,8 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault()
-    dispatch(loginUser(user))
     setHasAttemptedLogin(true) // <-- state setter
+    dispatch(loginUser(user))
   }
 
   // Success toast and redirect
@@ -54,7 +54,7 @@ function Login() {
         theme: 'colored'
       })
     }
-  }, [auth.error, hasAttemptedLogin])
+  }, [auth.error, hasAttemptedLogin, navigate])
 
   return (
     <section className="flex flex-col items-center pt-6">

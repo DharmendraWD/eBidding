@@ -4,19 +4,16 @@ import { FaUserCog, FaKey, FaFileAlt, FaShoppingCart, FaWpforms, FaBox } from 'r
 import HeroStyle from '../hero/css/hero.module.css' // replace with your actual CSS module path
 import Table from '../between/Table'
 import Profile from './profileManager/profile/Profile'
-
+import Instructions from './Instructions'
+import { useDispatch, useSelector } from 'react-redux';
+import { togglePopup } from '../../Redux/PopupSlice/PopupSlice';
+import InstructionPopup from '../utilities/InstructionPopup'
+import HeadingXl from '../utilities/HeadingXl'
+import IdeaIcon from '../utilities/IdeaIcon'
+import BoxTable from '../between/BoxTable'
 function Dashboard() {
     const categories = [
-        {
-          name: 'Profile Manager',
-          icon: FaUserCog,
-          link: '/profile-manager'
-        },
-        {
-          name: 'Password Manager',
-          icon: FaKey,
-          link: '/password-manager'
-        },
+  
         {
           name: 'Tender Manager',
           icon: FaFileAlt,
@@ -39,14 +36,51 @@ function Dashboard() {
         }
       ]
 
+      const dispatch = useDispatch();
+      const isPopupOpen = useSelector((state) => state.popup); // assuming reducer key is 'popup'
+    
+// Dashboard instruction data popoup 
+// Dashboard instructionData
+const instructionData = [
+  {
+    "id": 1,
+    "text": "The Dashboard gives you an overview of tender activities."
+  },
+  {
+    "id": 2,
+    "text": "Use the Search bar to filter tenders based on categories."
+  },
+  {
+    "id": 3,
+    "text": "Download tender documents for offline use."
+  },
+  {
+    "id": 4,
+    "text": "Export your tender list to Excel format for reporting."
+  },
+  {
+    "id": 5,
+    "text": "Apply for tenders directly from the Active Tenders page."
+  }
+];
+
+
   return (
-    <div className='mt-[100px] items-center block xl:flex'>
-    <div className='w-full xl:w-[60%]'>
-    <Table></Table>
-    </div>
-{/* <Profile></Profile> */}
-      <div className="flex flex-wrap gap-4 justify-center">
-      {categories.map((category, index) => (
+    <div className='mt-[100px] items-center block'>
+      <div className='flex items-center gap-4'>
+        <HeadingXl text={"Tender Notice"}></HeadingXl>
+        <div className='lg:absolute lg:right-[10px]'>
+          <IdeaIcon></IdeaIcon>
+        </div>
+      </div>
+<div className='flex-col lg:flex-row flex'>  
+<div className='w-[full] lg:w-[60%]'>
+<Table></Table>
+</div>
+<BoxTable></BoxTable>
+</div>
+<div className='flex justify-center '>
+{categories.map((category, index) => (
         <Link to={category.link} key={index} className='sm:max-w-[200px] w-full '>
           <div
             className={`
@@ -76,7 +110,21 @@ function Dashboard() {
           </div>
         </Link>
       ))}
-      </div>
+</div>
+     <div className="p-4">
+      {isPopupOpen ? (
+        <>
+     <InstructionPopup togglePopupState={isPopupOpen}>
+     <Instructions instructionData={instructionData}/>
+
+     </InstructionPopup>
+        </>
+
+      ) : (
+        ""
+      )}
+    </div>
+     
     </div>
   )
 }
