@@ -41,7 +41,7 @@ const Nav = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-8">
               <div className="text-xl font-bold text-indigo-600">
-                <Link to="/">AMDA</Link>
+                <Link to="/">Company Name</Link>
               </div>
             </div>
 
